@@ -1,0 +1,177 @@
+h3{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+p{
+    font-size: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;   
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.pric {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+
+.basic-code {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    text-align: start;
+}
+
+.title{
+    font-size: 27px;
+    align-items: center;
+    text-align: center;
+}
+
+.pric basic-code {
+    margin: 0;
+    padding: 0; 
+}
+
+body {
+    background-color: #b2bdcb;
+}
+
+.indice{
+    background-color: #d2d8e3;
+    padding-left: 10px;
+    border-radius: 20px;
+    overflow-x: auto;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.indice ol li{
+    border: none;
+    padding: 2px; 
+    margin-top: 10px;
+}
+
+.basic-text{
+    text-align: left;
+    font-size: 15px;
+    margin: 0.5rem;
+    margin-left: 2rem;
+}
+
+.button-exemplos{
+    margin-top: 1.5rem;
+    width: 15rem;
+    align-items: center;
+    text-align: absolute;
+}
+.titulos{
+    font-size: 20px;
+}
+
+.escrita{
+    font-size: 17px;
+}
+
+.circle-cluster {
+    background-color: #ff7800;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+}
+
+.circle-marker {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ff7800;
+}
+
+
+
+.abanavbar {
+    display: flex;
+    background-color: #333;
+    justify-content: center;
+    padding: 10px;
+}
+
+.abanavbar a {
+    padding: 14px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.abanavbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.abanavbar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+    margin-top: 20px;
+}
+
+
+@media screen and (max-width: 730px) {
+
+    .logo, .menu, .redesSociais {
+        flex: 1 1 33%;
+        text-align: center;
+    }
+
+    .menu nav a {
+        display: inline-block;
+        padding: 5px 10px;
+
+    }
+
+    .redesSociais {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}   

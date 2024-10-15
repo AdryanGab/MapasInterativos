@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camada do Mapa</title>
     <link rel="stylesheet" href="Leaflet\leaflet.css">
-    <link rel="stylesheet" href="./dist/MarkerCluster.css">
-    <link rel="stylesheet" href="./dist/MarkerCluster.Default.css">
 </head>
 <style>
     #map {
@@ -26,9 +24,6 @@
 </html>
 <script src="Leaflet\leaflet.js"></script>
 
-<script src="Data\data.js"></script>
-<script src="./dist/leaflet.markercluster.js"></script>
-
 <script>
     var map = L.map('map').setView([0, 0], 1);
 
@@ -36,23 +31,32 @@
         attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
     }).addTo(map);
 
-    const geojsonmarkerOptions = {
-        radius: 8,
-        fillcolor: "#ff7800",
-        color: "#a76bcf",
-        weight: 5,
-        opacity: 1,
-        fillOpacity: 0.8
-    };
-
-    const markers = L.markerClusterGroup();
-    L.geoJSON(data, {
-        pointToLayer: function (feature, latlgn) {
-            return markers.addLayer(L.circleMarker(latlgn, geojsonmarkerOptions))
-        }
+    var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
 
-    map.addLayer(markers);
+
+    
+    fetch('Data/linha.geojson') .then(response => {
+        if (!response.ok) {
+            throw new Error('A network diz que tem algo errado!');
+        }
+        return response.json(); // Converte a resposta para JSON
+    })
+    
+    .then(data => {
+        L.geoJSON(data, {
+            style: function () {
+                return { color: 'black' }; // Define a cor da linha
+            }
+        }).bindPopup(function () {
+            return "Rota Feita"; // Texto do popup
+        }).addTo(map);
+    })
+    .catch(error => {
+        console.error('Houve um problema com a requisição Fetch:', error);
+    });
+
 
 </script>
